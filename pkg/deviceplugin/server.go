@@ -54,7 +54,7 @@ func (d *GopherDevicePlugin) Run() error {
 		return errors.WithMessagef(err, "delete socket: %s failed", socket)
 	}
 
-	sock, err := net.Listen("unxi", socket)
+	sock, err := net.Listen("unix", socket)
 	if err != nil {
 		return errors.WithMessagef(err, "listen unix %s failed", socket)
 	}

@@ -9,6 +9,6 @@ spec:
       command: ["sh", "-c", "echo Hello, Kubernetes! && sleep 3600"]
       resources:
         requests:
-          hongxuming.com/gopher: "1"
+          hxm.com/gopher: "1"
         limits:
-          hongxuming.com/gopher: "1"
+          hxm.com/gopher: "1"
