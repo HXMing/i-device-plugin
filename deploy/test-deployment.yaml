@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gopher-deployment
+  labels:
+    app: gopher-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: gopher-container
+  template:
+    metadata:
+      name: gopher-pod
+      labels:
+        app: gopher-container
+    spec:
+      containers:
+        - name: gopher-container
+          image: busybox
+          command: ["sh", "-c", "echo Hello, Kubernetes! && sleep 3600"]
+          resources:
+            requests:
+              hxm.com/gopher: "1"
+            limits:
+              hxm.com/gopher: "1"
